@@ -1,4 +1,4 @@
-//点击开启游戏 动态显示100div
+﻿//点击开启游戏 动态显示100div
 //leftCick 没有雷 --> 显示数字 扩散模式(当前周围无雷)
 // 有雷 --》 直接结束 ，弹出失败界面
 //rightClick 有雷 --> 进行标记  有标记 -->取消标记 -->  标记是否正确，10都正确，提示成功 
@@ -66,8 +66,8 @@ function bindEvent(){
 
 //生成雷
 function init(){	
-	leiOver = 2;
-	leiNum = 2;
+	leiOver = 10;
+	leiNum = 10;
 	var leimap = [];
 	score.innerHTML = leiOver;	
 	for(var i = 0; i < 10; i++){  //创建小方块，赋值
@@ -154,7 +154,7 @@ function rightClick(dom){
 				var isLei = document.getElementsByClassName('isLei');
 				var key = 0;									
 				var isLeiLength = isLei.length;
-				console.log('a');
+				
 				for(var i = 0; i < isLeiLength; i++){				
 					if(!isLei[i].classList.contains('flag')){
 						key = 1;
@@ -162,7 +162,7 @@ function rightClick(dom){
 					}
 				}
 				console.log('b');
-				console.log(key);
+				
 				if(key){					
 					victory.style.backgroundImage = 'url("img/defeat.jpg")';
 					console.log('zhixing');
@@ -171,7 +171,7 @@ function rightClick(dom){
 				}			
 				victory.style.display = 'block';
 				close.style.display = 'block';
-				console.log('zhixingl');
+				
 			}
 	    }	
 	    score.innerHTML = leiOver;
