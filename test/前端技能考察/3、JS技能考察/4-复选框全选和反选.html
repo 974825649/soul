@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+</head>
+<body>
+
+<form method="post" action="">
+   你爱好的运动是？<input type="checkbox" id="CheckedAll" />全选/全不选<br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+	<input type="checkbox" name="items" value="篮球"/>篮球
+	<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+	<input type="checkbox" name="items" value="乒乓球"/>乒乓球<br/>
+</form>
+<script>
+	var cka = $('#CheckedAll');  // 复选框父类
+	var obji = $("[name = 'items']"); //复选框子类
+	var objil = obji.length;
+	cka.on('click',function(){
+		console.log(this.checked);
+		if(this.checked == true){			
+			for(var i = 0;i < objil;i++){
+				obji[i].checked = true;
+				console.log(obji.eq(i));
+			}
+		}else{
+				for(var i = 0;i < objil;i++){
+				obji[i].checked = false;
+			}
+		}
+	})
+	obji.on('click',function(){   
+		var key = 0;
+		for(var i = 0;i < objil;i++){
+			if(obji[i].checked == true){
+				key++;
+
+			}
+		}
+		if(key != objil){
+			cka[0].checked = false;
+		}else{
+			cka[0].checked = true;
+		}  
+	})
+
+</script>
+</body>
+</html>
+ 

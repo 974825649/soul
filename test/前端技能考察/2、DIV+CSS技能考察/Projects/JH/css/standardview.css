@@ -1,0 +1,47 @@
+
+/*导航栏*/
+.wrap_nav{
+	background-color: rgb(165,139,114);
+}
+.nav .nav_logo{
+	background-image: url("../img/stv_logo.png");
+}
+.nav .nav_r ul li:hover{
+	background-color: #fff;
+}
+
+/*附件图文档*/
+.attachTable .attachTable_img{
+	text-align: left;
+}
+.attachTable .attachTable_td1{
+	color: rgb(169,146,105);
+	text-indent: 10px;
+}
+.attachTable .attachTable_th1{
+	text-indent: 5px;
+}
+.attachTable_th1 .attachTable_img{
+	font-weight: normal; 
+}
+
+/*房型表格*/
+.attachTable.room .attachTable_td1{
+	width: 90px;
+}
+.attachTable.room .attachTable_td2{
+	width: 125px;
+}
+.attachTable.room .attachTable_td3{
+	width: 85px;
+}
+.attachTable.room .attachTable_td4{
+	width: 100px;
+}
+.attachTable.room .attachTable_td5{
+	width: 115px;
+}
+.attachTable.room .attachTable_td6{
+	width: 100px;
+}
+/*信息表格*/

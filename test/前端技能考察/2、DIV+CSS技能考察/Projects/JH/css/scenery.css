@@ -1,0 +1,36 @@
+/*导航栏部分*/
+.wrap_nav{
+	background-color: rgb(148,149,153);
+}
+.nav .nav_logo{
+	background-image: url("../img/sc_logo.PNG");
+}
+
+/*基本信息框*/
+.basicinfo .bainfo_head p{
+	background-color: rgb(148,149,153);
+}
+.basicinfo .bainfo_content .downbtn{
+	background-color: rgb(58,58,60);
+}
+/*成果评价区域*/
+.wrap_content .content .content_r .content_r_main_demo .main_demo_content.result .resultbtn{
+	background-color: rgb(148,149,153);
+}
+/*表格区域*/
+.attachTable .attachTable_img{
+	text-align: left;
+}
+.attachTable .attachTable_td1{
+	color: rgb(169,146,105);
+	text-indent: 10px;
+}
+.attachTable .attachTable_th1{
+	text-indent: 5px;
+}
+.attachTable_th1 .attachTable_img{
+	font-weight: normal; 
+}
+/*.attachTable th:nth-child(2){
+	color: blue;
+}*/

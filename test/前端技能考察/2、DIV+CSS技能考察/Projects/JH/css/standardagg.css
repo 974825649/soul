@@ -1,0 +1,26 @@
+.wrap_nav{
+	background-color: rgb(9,42,68);
+}
+.nav .nav_logo{
+	background-image: url("../img/sta_logo.png");
+}
+.nav .nav_r ul li:hover{
+	background-color: rgb(166,145,106);
+}
+
+.wrap_content .content .standarResult{
+	color: rgb(102,102,102);
+	text-align: right;
+	margin-top: -25px;
+}
+
+.wrap_content .content .standarResult .standarResultAll{
+	color: rgb(185,83,65);
+	font-size: 20px;
+}
+
+
+.wrap_content .content .sceneryShowAll .sceneryShow{
+	float: left;
+	margin-right: 60px;
+}

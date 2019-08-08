@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/*头部*/
+.wrap-head{
+	width: 100%;
+	height: 30px;
+	background-color: rgb(58,58,60);
+}
+.wrap-head .header{
+	width: 950px;
+	height: 30px;
+	margin: 0 auto;
+	line-height: 30px;
+	font-size: 15px;
+	color: rgb(255,255,255);
+	font-weight: 400px;
+}
+.wrap-head .header .well{
+	float: left;
+	width: 200px;
+	height: 30px;
+	/*background: yellow;*/
+}
+.wrap-head .header .collect{
+	float: right;
+	width: 100px;
+	height: 30px;
+	/*background: yellow;*/
+	text-align: right;
+}
+/*内容*/
+.wrap-main{
+	width: 100%;
+	background-color: rgb(240,240,240);
+	padding-bottom: 40px;
+	overflow: hidden;
+}
+.main{
+	width: 940px;
+	height: 610px;
+	margin: 0 auto;
+}
+.main .main-head{
+	height: 110px;
+}
+.main .main-head img{
+	padding-top: 10px;
+}
+/*内容主体*/
+.main .content{
+	height: 500px;
+	background-color: #fff;
+	margin-top: -10px;
+	position: relative;
+}
+/*小窗口*/
+.main .content .ale{
+	float: left;
+	width: 100px;
+	height: 150px;
+	margin-top: 40px;
+	margin-left: 60px;
+	margin-right: 20px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+/*	background-color: pink;*/
+}
+.main .content .hand img{
+	float: right;
+	margin-top: 50px;
+}
+/*尾部*/
+.wrap-footer{
+	height: 80px;
+	width: 100%;
+	background-color: rgb(148,149,153);
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	line-height: 80px;
+}
+
+/*js事件的css*/
+.table{
+	position: absolute;
+	left: 120px;
+	top: 50px;
+	width: 700px;
+	height: 350px;
+}
+.thead{
+	width: 700px;
+	height: 50px;
+	border: 1px solid black;
+	background-color: rgb(240,240,240);
+	/*background-color: hotpink;*/
+	text-align: center;
+}
+.tbody{
+	width: 700px;
+	height: 200px;
+	text-align: center;
+	border: 1px solid black;
+	background-color: rgb(240,240,240);
+	/*background-color: pink;*/
+}
+.tfoot{
+	width: 700px;
+	height: 100px;
+	text-align: center;
+	border: 1px solid black;
+	background-color: rgb(240,240,240);
+	/*background-color: deeppink;*/
+}
+.close{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}

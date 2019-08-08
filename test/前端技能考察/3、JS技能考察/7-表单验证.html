@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/form.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+<style>
+.hide{
+      display:none;     
+     }
+.show{ display:inline;}
+</style>
+
+</head>
+<body>
+<h3>实现以下效果</h3>
+<img src="images/test_04.jpg" alt=""/>
+<hr>
+<form method="post" action="#">
+	<div class="int">
+		<label for="username">用户名:</label>
+		<input type="text" id="username" class="required" /><span style="color:red;padding:0 5px;">*</span><span id="sp1" style="display:none; background-color:#ffe0e1"><img src="images/error.png"> 请输入至少6位的用户名.</span>
+	</div>
+	<div class="int">
+		<label for="email">邮箱:</label>
+		<input type="text" id="email" class="required" /><span style="color:red;padding:0 4px;">*</span>
+		<span id="sp2" style="display:none; background-color:#ffe0e1"><img src="images/error.png">请输入正确的邮箱地址.</span>
+	</div>
+	<div class="int">
+		<label for="personinfo">个人资料:</label>
+		<input type="text" id="personinfo" />
+	</div>
+	<div class="sub">
+		<input type="submit" value="提交" id="send"/><input type="reset" id="res"/>
+	</div>
+</form>
+<script type="text/javascript">
+	//阻止表单默认事件
+	$("form").on("submit",function(){
+		event.preventDefault(); 
+	})
+	$('#send').on('click',function(){      
+		//检测用户名
+		var username = $('#username').val();
+		var img = "<img src='images/error.png'>";
+		console.log(username + 'ok');
+		if(username){
+			if(username.length < 6){
+				$('#sp1').css('display','inline');
+				$('#sp1').prev().text('*');
+				$('#sp1').html(img  + "请输入至少6位的用户名");
+			}else{
+				$('#sp1').css('display','none');
+				$('#sp1').prev().empty();
+			}
+		}else{
+			$('#sp1').css('display','inline');
+			$('#sp1').prev().text('*');
+			$('#sp1').html(img + "用户名不能为空");
+		}
+		//检测邮箱
+		var email = $('#email').val();
+		var reg=new RegExp(/^([a-zA-Z0-9._-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/);
+		if(reg.test(email)){
+			$('#sp2').css('display','none');
+			$('#sp2').prev().empty();
+		}else{
+			$('#sp2').css('display','inline');
+			$('#sp2').prev().text('*');
+		}
+	})
+</script>
+</body>
+</html>

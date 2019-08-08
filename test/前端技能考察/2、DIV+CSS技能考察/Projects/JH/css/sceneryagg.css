@@ -1,0 +1,45 @@
+/*导航栏*/
+.wrap_nav{
+	background-color: rgb(58,58,60);
+}
+.nav .nav_logo{
+	background-image: url("../img/sca_logo.png");
+}
+.nav .nav_r ul li:hover{
+	background-color: rgb(166,145,106);
+}
+/*景观库目录*/
+.wrap_content .content .content_l{
+	float: left;
+	width: 240px;
+	height: 750px;
+	border: 1px solid rgb(210,210,210);
+}
+.wrap_content .content .content_l .content_l_head{
+	height: 30px;
+	line-height: 30px;
+	background-color: rgb(58,58,60);
+}
+.wrap_content .content .content_l .content_l_head h2{
+	font-size: 12px;
+}
+.wrap_content .content .content_r{
+	float: left;
+	width: 745px;
+	margin-left: 10px;
+}
+.wrap_content .content .content_r .inputGroup{
+	border: 1px solid rgb(212,212,212);
+	height: 35px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.wrap_content .content .content_r .inputGroup input{
+
+}
+.wrap_content .content .content_r .inputGroup button{
+	border: 1px solid rgb(212,212,212);
+	margin-left: 10px;
+	width: 40px;
+	background-color: #fff;
+}

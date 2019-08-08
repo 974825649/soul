@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>2-11</title>
+<script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+</head>
+<body>
+  <h3> 表单对象属性过滤选择器.</h3>
+  <form id="form1" action="#">
+    <button id="btn1">对表单内 可用input 赋值value为“hello”.</button>
+    <button id="btn2">对表单内 不可用input 赋值value为“hi”.</button><br /><br />
+  	
+       可用元素：<input name="add" value="可用文本框" class="use nw po"/>  <br/>
+       不可用元素：<input name="email" disabled="disabled" value="不可用文本框" class="useless" /><br/>
+       可用元素： <input name="che" value="可用文本框" class="use" /><br/>
+  	 不可用元素：<input name="name" disabled="disabled"  value="不可用文本框"
+     class="useless" /><br/>
+  </form>
+       <hr/>
+	 <br/>
+     多选框：<br/>
+	 <input type="checkbox" name="newsletter" checked="checked" value="test1" />test1
+     <input type="checkbox" name="newsletter" value="test2" />test2
+     <input type="checkbox" name="newsletter" value="test3" />test3
+     <input type="checkbox" name="newsletter" checked="checked" value="test4" />test4
+     <input type="checkbox" name="newsletter" value="test5" />test5
+	 <div>有复选框"<input type="text" id="num" style="width:20px;text-align:center;">"个被选中!</div>
+
+       <hr/>
+     下拉列表1：<br/>
+	<select name="test" multiple="multiple" class="test" style="height:100px">
+		<option>浙江</option>
+		<option selected="selected">湖南</option>
+		<option>北京</option>
+		<option selected="selected">天津</option>
+		<option>广州</option>
+		<option>湖北</option>
+    </select>
+    
+     <br/><br/>
+     下拉列表2：<br/>
+	 <select name="test2" class="test2">
+    <option>浙江</option>
+    <option>湖南</option>
+    <option selected="selected">北京</option>
+    <option>天津</option>
+    <option>广州</option>
+    <option>湖北</option>
+    </select>
+	<br/><br/>
+     <div>你选中的是：<input type="text" id="address"></div>
+  <!-- </form> -->
+  <script>
+    $(document).ready(function(){ 
+      $("form").on("submit",function(event){
+        event.preventDefault(); 
+      })
+      //表单对象过滤
+      var use = $(".use");
+      var useless = $(".useless");   
+      $('#btn1').on('click',function(){
+        use.val('hello');
+      })
+      $('#btn2').on('click',function(){
+        useless.val('hi');
+      })
+      //多选框
+      var sleall = $("[name = 'newsletter']"); //选择所有的多选框
+      $('#num').val(2);                    //设定初始值
+      sleall.on('click',function(){
+        var num = 0;
+        var slealll = sleall.length;    
+        for (var i = 0; i < slealll; i++) {
+          if(sleall[i].checked == true){
+            num++;         
+          }
+        }
+        $('#num').val(num);
+      })
+      //下拉列表1
+      $('.test').on('click',function(){
+        var val1 = $(this).find("option:selected").text();
+        $('#address').val(val1);
+      })
+      //下拉列表2
+      $(".test2").on('click',function(){   
+        var val2 = $(this).find("option:selected").text();
+        $('#address').val(val2);  
+      })
+      //事件委托
+      // $(".test").on('click', "option", function(){
+
+      //   console.log($(this).val());
+      // })
+    })
+  </script>
+</body>
+</html>

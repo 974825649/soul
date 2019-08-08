@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3-10-4</title>
+<script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+<style type="text/css">
+#box{
+	padding: 50px;
+	height: 800px;
+	background: #eee;
+}
+.red{
+ background:red;
+}
+</style>
+
+</head>
+<body>
+	
+    <input type="button"  id="btn1" value="单击弹出‘hello world’"/>
+    <input type="button"  id="btn2" value="双击弹出‘hello world’"/>
+    <hr>
+
+    <p>根据文本框的状态，改变文本框的边框颜色：blur-红，focus-蓝，change-黄，</p>
+    <input class="inpc" type="text" value="">
+    <hr>
+    <dl>
+    	<dt>在下面区域移动鼠标</dt>
+    	<dd>光标相对浏览器窗口的顶部距离：<input type="text" id="topBro" value="" />，左侧距离<input type="text" id="leftBro" value="" /></dd>
+    	<dd>光标相对页面的顶部距离：<input type="text" id="topHtml"  value=""/>，左侧距离<input type="text" id="leftHtml" value="" /></dd>
+    	<dd>光标相对灰色框的顶部距离：<input type="text" id="topBox" value="" />，左侧距离<input type="text" id="leftBox"  value=""/></dd>
+    </dl>
+    <div id="box" style="border:1px solid gray"></div>
+
+    <input type="button" id="delEvent" value="移除以上所以节点绑定的事件"/>
+    <script>
+        // 单双击
+        $('#btn1').on('click',function(){
+            alert('hello world');
+        });
+        $('#btn2').on('dblclick',function(){
+            alert('hello world');
+        });
+        // 文本框颜色
+        $(".inpc").blur(function(){ 
+            $('.inpc').css({'border-color' : 'red'});
+        });
+        $(".inpc").focus(function(){
+            $('.inpc').css({'border-color' : 'blue'});
+        })
+        $(".inpc").change(function(){
+            $('.inpc').css({'border-color' : 'yellow'});
+        })
+        //获取光标距离
+        $('#box').on('mousemove',function(e){
+            var e = event || window.event;
+            // 相对于浏览器窗口
+            $('#leftBro').val(e.clientX);
+            $('#topBro').val(e.clientY);
+            //相对于文档,计算滚动条
+            $('#leftHtml').val(e.pageX);
+            $('#topHtml').val(e.pageY);
+            //相对于灰色窗口
+            var boxoffsetX = $('#box').offset().left;   
+            var boxoffsetY = $('#box').offset().top; 
+            $('#leftBox').val(e.pageX - boxoffsetX);
+            $('#topBox').val(e.pageY - boxoffsetY);
+        });
+        //移除所有节点的绑定
+        $('#delEvent').on('click',function(){
+            $("#btn1").unbind('click');
+            $("#btn2").off('dblclick');
+            $(".inpc").off();
+            $(document).off();
+        });
+
+
+    </script>
+</body>
+</html>
+
+ 

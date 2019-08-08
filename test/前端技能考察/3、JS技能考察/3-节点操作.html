@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3-10-4</title>
+<script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+<style type="text/css">
+.test{
+ font-weight:bold;
+ color : red;
+}
+.add{
+ font-style:italic;
+}
+</style>
+
+</head>
+<body>
+
+    <h2>A</h2>
+    <ul id="A">
+    	<li>list1</li>
+    	<li>list2</li>
+    	<li>list3</li>
+    	<li>list4</li>
+             
+        <li ></li>
+        <a href="http://www.baidu.com"></a>
+    </ul>	
+    <input type="button" id="btn1" value="在B中添加一个新li节点 内容为list "/>
+    <input type="button" id="btn2" value="从A复制节点list1到B"/>
+    <input type="button" id="btn3" value="从A把节点list2删掉"/>
+    <input type="button" id="btn4" value="从A克隆节点list3到B"/>
+    <input type="button" id="btn5" value="把A中节点list4设置为链接 链接地址为百度首页"/>
+
+    <h2>B</h2>
+    <ul id="B">
+    </ul>
+    <script>
+        var a = $('#A');
+        var b = $('#B');
+        //添加新的li
+        $('#btn1').on('click',function() {
+            b.append("<li>list</li>") 
+        });
+        //删除节点list2
+        $('#btn3').on('click',function(){      
+            for(var i = 0;i < $('#A li').length;i++){
+                if($('#A li').eq(i).text() == 'list2'){
+                    $('#A li').eq(i).remove();
+                    i--;
+                }
+            }
+        })
+        //克隆li1
+        $('#btn2').on('click',function(){
+            for(var i = 0;i < $('#A li').length;i++){
+                if($('#A li').eq(i).text() == 'list1'){
+                    $('#A li').eq(i).clone().appendTo($('#B'));
+                }
+            }
+        })
+        //克隆li3
+        $('#btn4').on('click',function(){
+            for(var i = 0;i < $('#A li').length;i++){
+                if($('#A li').eq(i).text() == 'list3'){
+                    $('#A li').eq(i).clone().appendTo($('#B'));
+                }
+            }
+        })
+        //添加属性
+        $('#btn5').on('click',function(){
+            for(var i = 0;i < $('#A li').length;i++){
+                if($('#A li').eq(i).text() == 'list4'){
+                    console.log('ok');
+                    var list4 = ($('#A li').eq(i).text());
+                    $('#A li').eq(i).empty();
+                    $('#A li').eq(i).append("<a href='http://www.baidu.com'> "+ list4 + "</a>");
+                }
+            }  
+        })
+    </script>	
+</body>
+</html>
+
+ 
